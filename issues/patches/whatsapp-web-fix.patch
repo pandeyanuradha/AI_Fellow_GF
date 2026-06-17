@@ -1,0 +1,241 @@
+diff --git a/src/app/interface_manager/routers/common.py b/src/app/interface_manager/routers/common.py
+index 2fbd617..fd0d36f 100644
+--- a/src/app/interface_manager/routers/common.py
++++ b/src/app/interface_manager/routers/common.py
+@@ -17,7 +17,7 @@ from webapp import (
+ )
+ 
+ from logger import get_logger
+-from utils import load_config
++from utils import load_config, WhatsAppInterfaceError
+ from context import APIRuntimeContext
+ from api_handler import handle_api_chat
+ from pydantic import BaseModel
+@@ -118,10 +118,17 @@ async def chat(prompt: PromptCreate):
+     # ------------------------------------------------
+     if app_type == "WHATSAPP_WEB":
+         logger.info("Chat request: WhatsApp Web")
+-        result = send_prompt_whatsapp(
+-            chat_id=prompt.chat_id,
+-            prompt_list=prompt.prompt_list,
+-        )
++        try:
++            result = send_prompt_whatsapp(
++                chat_id=prompt.chat_id,
++                prompt_list=prompt.prompt_list,
++            )
++        except WhatsAppInterfaceError as e:
++            # Interface/harness failure is NOT a model answer. Surface it as a
++            # 502 so the evaluator scores it as a harness error, not as the
++            # chatbot returning nothing.
++            logger.error(f"WhatsApp interface error: {e}")
++            raise HTTPException(status_code=502, detail=f"WhatsApp interface error: {e}")
+         return JSONResponse(content={"response": result})
+ 
+     # ------------------------------------------------
+diff --git a/src/app/interface_manager/utils.py b/src/app/interface_manager/utils.py
+index 5f12ddc..b027edb 100644
+--- a/src/app/interface_manager/utils.py
++++ b/src/app/interface_manager/utils.py
+@@ -2,6 +2,7 @@ import os
+ import time
+ import json
+ import socket
++import re
+ import psutil
+ import requests
+ from selenium import webdriver
+@@ -29,6 +30,18 @@ def load_json(file_path):
+ 
+ logger = get_logger("interface_manager")
+ 
++# --------------------------------------------------------------------
++# Exceptions
++# --------------------------------------------------------------------
++class WhatsAppInterfaceError(Exception):
++    """Raised when the WhatsApp Web harness fails to drive/scrape the UI.
++
++    This is distinct from "the bot returned an empty answer": it signals an
++    infrastructure/interface failure so the caller can surface a non-200
++    instead of masquerading the failure as a model response.
++    """
++    pass
++
+ # --------------------------------------------------------------------
+ # Driver Management
+ # --------------------------------------------------------------------
+@@ -412,7 +425,11 @@ def search_entity(driver: webdriver.Chrome, app_name: str) -> bool:
+     app_cfg = load_xpaths()["applications"][app_name.lower()]
+     chat_cfg = app_cfg["ChatPage"]
+     entity_name = cfg.get("agent_name")
+-    contact_selection = "//span[@title='" + entity_name + "']"
++    # Honor the configured contact selector if present; otherwise fall back to
++    # building one from agent_name. Previously this key in xpaths.json was dead
++    # config (silently ignored), which made the documented knob a no-op.
++    contact_selection = chat_cfg.get("contact_selection_xpath") \
++        or ("//span[@title='" + entity_name + "']")
+ 
+     try:
+         search_input_xpath = chat_cfg.get("contact_search_element") or chat_cfg.get("model_name_entry_element")
+@@ -442,6 +459,41 @@ def search_entity(driver: webdriver.Chrome, app_name: str) -> bool:
+ def split_message(message, max_length=1000):
+     return [message[i:i + max_length] for i in range(0, len(message), max_length)]
+ 
++
++# A bare WhatsApp timestamp line, e.g. "12:59 PM" or "11:42 AM".
++_WA_TIMESTAMP_RE = re.compile(r"^\d{1,2}:\d{2}\s*(AM|PM)$", re.IGNORECASE)
++# A voice-note duration line, e.g. "0:19".
++_WA_DURATION_RE = re.compile(r"^\d{1,2}:\d{2}$")
++# Noise labels WhatsApp / business bots render inside a message row. Matched as
++# line prefixes because a suggestion label and a voice-note duration can render
++# mashed onto a single line (e.g. "Related questions 0:19").
++_WA_NOISE_PREFIXES = ("you", "related questions", "forwarded")
++
++
++def clean_whatsapp_response(text: str, prompt: str = "") -> str:
++    """Strip WhatsApp row-chrome from a scraped message.
++
++    A scraped ``div[role=row]`` innerText can include an avatar label ("You"),
++    the echoed prompt (for quoted/reply bubbles), bare timestamps, voice-note
++    durations and suggestion labels. Keep only the substantive answer lines.
++    """
++    prompt_norm = (prompt or "").strip().lower()
++    kept = []
++    for raw in (text or "").splitlines():
++        line = raw.strip()
++        if not line:
++            continue
++        low = line.lower()
++        if any(low == p or low.startswith(p + " ") for p in _WA_NOISE_PREFIXES):
++            continue
++        if prompt_norm and low == prompt_norm:
++            continue
++        if _WA_TIMESTAMP_RE.match(line) or _WA_DURATION_RE.match(line):
++            continue
++        kept.append(line)
++    return "\n".join(kept).strip()
++
++
+ def send_message_whatsapp(driver: webdriver.Chrome, prompt: str):
+     """
+     Sends a prompt to WhatsApp Web and retrieves responses after the last sent message.
+@@ -482,6 +534,17 @@ def send_message_whatsapp(driver: webdriver.Chrome, prompt: str):
+             # setup the wait time counter.
+             wait_time = 0 # seconds
+ 
++            # Direction detection no longer relies on the legacy "message-in"/
++            # "message-out" CSS classes (WhatsApp removed them) nor on a sender
++            # name (outgoing bubbles carry the *linked account's* own name, and
++            # some business bots send template replies with NO sender label at
++            # all). The only robust signal left:
++            #   * OUTGOING bubbles always have a div[data-pre-plain-text] child.
++            #   * The agent's replies are the message rows AFTER the last
++            #     outgoing row that do NOT carry data-pre-plain-text.
++            row_xpath = "//div[@role='row']"
++            pre_text_xpath = ".//div[@data-pre-plain-text]"
++
+             # wait for the responses from the agent for a maximum of 30 seconds
+             while "".join(old_response_texts) != "".join(response_texts) or len(response_texts) == 0:
+                 if wait_time > 30:
+@@ -491,46 +554,34 @@ def send_message_whatsapp(driver: webdriver.Chrome, prompt: str):
+                 wait_time += 2
+ 
+                 wait = WebDriverWait(driver, 30)
+-                message_in = chat_cfg["message_in_element"]
+-                message_out = chat_cfg["message_out_element"]
+-                all_messages = wait.until(
+-                    EC.presence_of_all_elements_located(
+-                        (By.XPATH, f"{message_in} | {message_out}")
+-                    )
++                all_rows = wait.until(
++                    EC.presence_of_all_elements_located((By.XPATH, row_xpath))
+                 )
+ 
+-                outgoing_msgs = driver.find_elements(By.XPATH, message_out)
+-                if not outgoing_msgs:
+-                    raise Exception("No outgoing messages found.")
++                def _is_outgoing(row):
++                    return bool(row.find_elements(By.XPATH, pre_text_xpath))
+ 
+-                last_outgoing = outgoing_msgs[-1]
++                outgoing_idxs = [i for i, r in enumerate(all_rows) if _is_outgoing(r)]
++                if not outgoing_idxs:
++                    raise Exception("No outgoing messages found.")
+ 
+-                try:
+-                    last_index = next(
+-                        i for i, msg in enumerate(all_messages) if msg == last_outgoing
+-                    )
+-                except StopIteration:
+-                    raise Exception(
+-                        "Last outgoing message not found in all_messages list."
+-                    )
++                last_index = outgoing_idxs[-1]
+ 
+-                responses_after = all_messages[last_index + 1:]
++                # Replies = rows after our last outgoing message that are NOT
++                # themselves outgoing and carry real text.
+                 responses = [
+-                    msg
+-                    for msg in responses_after
+-                    if "message-in" in str(msg.get_attribute("class"))
++                    r for r in all_rows[last_index + 1:]
++                    if not _is_outgoing(r) and (r.text or "").strip()
+                 ]
+ 
+                 old_response_texts = response_texts.copy()
+                 response_texts = []
+-                selectable_text = chat_cfg["agent_response_element"]
+                 for msg in responses:
+                     try:
+-                        text_elem = msg.find_element(By.XPATH, selectable_text)
+-                        text = text_elem.text.strip()
++                        text = clean_whatsapp_response((msg.text or "").strip(), prompt)
+                         if text:
+                             response_texts.append(text)
+-                            logger.info(f"(Waited:{wait_time}) Received response from WhatsApp: %s", text)
++                            logger.info("(Waited:%s) Received response from WhatsApp: %s", wait_time, text)
+                     except Exception as e:
+                         logger.debug("Could not read response message: %s", e)
+                         continue
+@@ -550,7 +601,11 @@ def send_message_whatsapp(driver: webdriver.Chrome, prompt: str):
+                 time.sleep(0.3)
+             else:
+                 logger.error("Max chat retries reached. Aborting.")
+-                return "No response received"
++                # Fail loud: signal a harness/interface failure rather than
++                # masquerading it as an empty model answer.
++                raise WhatsAppInterfaceError(
++                    f"WhatsApp interface failed after {max_retries} attempts: {e}"
++                )
+ 
+ def handle_farmerchat(driver, prompt):
+ 
+diff --git a/src/app/interface_manager/whatsapp.py b/src/app/interface_manager/whatsapp.py
+index f6b2be2..82a1844 100644
+--- a/src/app/interface_manager/whatsapp.py
++++ b/src/app/interface_manager/whatsapp.py
+@@ -7,6 +7,7 @@ from utils import (
+     logout_app,
+     search_entity,
+     send_message_whatsapp,
++    WhatsAppInterfaceError,
+ )
+ 
+ logger = get_logger("whatsapp_driver")
+@@ -53,12 +54,13 @@ def send_prompt_whatsapp(chat_id: int, prompt_list: list[str]) -> list[dict]:
+     driver = login_whatsapp()
+     if not driver:
+         logger.error("Could not initialize WhatsApp Web driver.")
+-        return [{"chat_id": chat_id, "prompt": p, "response": "No response received"} for p in prompt_list]
++        # Infra failure, not an empty answer -> fail loud.
++        raise WhatsAppInterfaceError("Could not initialize WhatsApp Web driver.")
+ 
+     try:
+         if not search_llm(driver):
+             logger.error("Could not open chat with LLM contact.")
+-            return [{"chat_id": chat_id, "prompt": p, "response": "No response received"} for p in prompt_list]
++            raise WhatsAppInterfaceError("Could not open chat with the configured contact.")
+ 
+         for prompt in prompt_list:
+             response = send_whatsapp_message(driver, prompt)

@@ -1,0 +1,47 @@
+# --- Vendored upstream tool (kept locally for inspection, not redistributed) ---
+vendor/
+
+# --- Env / secrets ---
+.env
+.env.local
+*.env.local
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.python-version
+
+# --- Node ---
+node_modules/
+dist/
+build/
+.next/
+.vite/
+
+# --- Editor / OS ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# --- Build / cache ---
+*.log
+.cache/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- Promptfoo / DeepEval artifacts (may grow large) ---
+.promptfoo/
+.deepeval/
+promptfoo-results/
+
+# --- Generated audio clips + ASR model cache (regenerate via scripts/gen_audio.py) ---
+audio/
+
+# --- Assignment brief (do not redistribute publicly) ---
+AI Fellows India - Technical Assignment.pdf

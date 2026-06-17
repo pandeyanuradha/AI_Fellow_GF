@@ -1,0 +1,13 @@
+# pyproject.toml — minimal, just to mark project root for tools.
+# Real dependency list lives in requirements.txt (HF Spaces Docker SDK
+# convention).
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cerai-eval-assignment"
+version = "0.1.0"
+description = "Reference evaluator + maternal-health endpoint built as critique-companion to CeRAI AIEvaluationTool."
+requires-python = ">=3.11"

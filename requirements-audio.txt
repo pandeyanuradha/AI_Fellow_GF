@@ -1,0 +1,9 @@
+# Optional dependencies for the spoken-channel (voice) evaluation extension.
+# Not required for the core text evaluator. Install with:
+#   uv pip install -r requirements-audio.txt   (or: pip install -r requirements-audio.txt)
+#
+# Used by scripts/gen_audio.py (text->speech) and eval/audio.py +
+# scripts/score_audio.py (speech->text scoring of a voice bot's audio answers).
+
+edge-tts>=7.2          # free, keyless TTS with Indian en-IN / hi-IN neural voices
+faster-whisper>=1.2    # local, keyless ASR (CTranslate2 Whisper) for transcription

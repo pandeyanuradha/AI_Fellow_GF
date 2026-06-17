@@ -1,0 +1,492 @@
+[
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 0,
+    "text": "# India Universal Immunization Programme (UIP) Schedule"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 1,
+    "text": "**Source:** Ministry of Health and Family Welfare, Government of India — National Immunization Schedule\n**URL:** https://nhm.gov.in/"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 2,
+    "text": "## At birth (within 24 hours, or as soon as possible)"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 3,
+    "text": "- **BCG** (Bacillus Calmette-Guérin, against tuberculosis) — single dose, intradermal, left upper arm.\n  - If missed at birth: can be given **up to 1 year of age**.\n- **OPV-0** (Oral Polio Vaccine, zero dose) — 2 drops oral.\n- **Hepatitis B birth dose** — 0.5 ml intramuscular, anterolateral thigh."
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 4,
+    "text": "## 6 weeks"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 5,
+    "text": "- **OPV-1**, **Pentavalent-1** (DPT + HepB + Hib), **fIPV-1** (fractional inactivated polio), **Rotavirus-1**, **PCV-1** (pneumococcal)"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 6,
+    "text": "## 10 weeks"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 7,
+    "text": "- OPV-2, Pentavalent-2, Rotavirus-2"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 8,
+    "text": "## 14 weeks"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 9,
+    "text": "- OPV-3, Pentavalent-3, fIPV-2, Rotavirus-3, PCV-2"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 10,
+    "text": "## 9-12 months"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 11,
+    "text": "- **Measles-Rubella (MR) 1st dose**\n- **JE vaccine 1st dose** (in JE-endemic districts)\n- **PCV booster**"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 12,
+    "text": "## 16-24 months"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 13,
+    "text": "- MR 2nd dose, DPT booster-1, OPV booster, JE 2nd dose, Vitamin A 2nd dose"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 14,
+    "text": "## 5-6 years"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 15,
+    "text": "- DPT booster-2"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 16,
+    "text": "## 10 years, 16 years"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 17,
+    "text": "- Td (tetanus and diphtheria) booster"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 18,
+    "text": "## Pregnancy"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 19,
+    "text": "- 2 doses of **Td** (tetanus and adult diphtheria), at least 4 weeks apart. First dose as early as possible; second dose at least 4 weeks before delivery."
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 20,
+    "text": "## BCG specifics"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 21,
+    "text": "- Given as a single 0.05 ml dose (newborn) or 0.1 ml (older infant), intradermal.\n- A small papule usually appears at the injection site 2-3 weeks later, scabs over, and forms a small scar by 6-12 weeks. This is the expected response.\n- Contraindications: known HIV infection with significant immunosuppression, generalised skin disease at the injection site."
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 22,
+    "text": "## If a child has missed vaccines"
+  },
+  {
+    "doc_id": "india_uip",
+    "chunk_id": 23,
+    "text": "Catch-up schedules are available — consult the nearest health centre. Do **not** try to calculate doses yourself."
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 0,
+    "text": "# MoHFW Anemia Mukt Bharat — Iron and Folic Acid Supplementation"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 1,
+    "text": "**Source:** Anemia Mukt Bharat (AMB) operational guidelines, Ministry of Health and Family Welfare, Government of India\n**URL:** https://anemiamuktbharat.info/"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 2,
+    "text": "## Pregnant women"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 3,
+    "text": "**Daily dose during pregnancy:** 1 IFA red tablet daily, containing:\n- **60 mg of elemental iron**\n- **500 micrograms (mcg) of folic acid**"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 4,
+    "text": "**Duration:** at least **180 days** during pregnancy, starting from the second trimester (after 12 weeks of gestation) when nausea has typically subsided. If started later, continue for the remainder of pregnancy."
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 5,
+    "text": "**Postpartum:** Continue daily IFA supplementation for **180 days** after delivery, especially for lactating women."
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 6,
+    "text": "## Counselling points"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 7,
+    "text": "Pregnant women should be told:\n- Take the IFA tablet with food or after a meal to reduce stomach upset\n- Do not take with tea, coffee, or milk (these reduce iron absorption)\n- Taking with vitamin C-rich foods (citrus, amla) improves absorption\n- Side effects of black stools, mild nausea, and constipation are normal and not harmful\n- If severe vomiting or diarrhoea occurs, consult the health worker — do not stop on your own"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 8,
+    "text": "## Children 6-59 months"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 9,
+    "text": "Bi-weekly IFA syrup, 1 ml twice a week containing 20 mg iron + 100 mcg folic acid. Continue for the whole year except during acute illness."
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 10,
+    "text": "## Adolescents (10-19 years)"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 11,
+    "text": "Weekly IFA tablet (blue tablet for school-going children, pink for adolescent girls and women of reproductive age) containing:\n- 60 mg of elemental iron\n- 500 mcg of folic acid"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 12,
+    "text": "One tablet per week."
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 13,
+    "text": "## Severe anemia"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 14,
+    "text": "- Hb < 7 g/dL or symptomatic anemia: requires medical evaluation, possible IV iron or transfusion. **Refer to a doctor — do not self-treat with higher oral doses.**\n- Hb 7-10.9 g/dL: therapeutic dose 2 IFA tablets daily for 3 months, then prophylactic dose. Under medical supervision."
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 15,
+    "text": "## Important safety notes"
+  },
+  {
+    "doc_id": "mohfw_anemia",
+    "chunk_id": 16,
+    "text": "- **Iron overdose** is a serious risk in young children. Keep tablets out of reach.\n- Do **not** double-up on missed doses. Resume the normal schedule.\n- IFA supplementation in pregnancy is preventive; it does **not** replace screening and treatment of anemia."
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 0,
+    "text": "# WHO Antenatal Care Recommendations (2016 Model)"
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 1,
+    "text": "**Source:** WHO recommendations on antenatal care for a positive pregnancy experience (2016)\n**URL:** https://www.who.int/publications/i/item/9789241549912"
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 2,
+    "text": "## Number of contacts"
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 3,
+    "text": "The WHO 2016 antenatal care (ANC) model recommends a minimum of **8 contacts** during pregnancy to reduce perinatal mortality and improve women's experience of care. This replaces the older Focused Antenatal Care (FANC) model, which recommended 4 visits."
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 4,
+    "text": "The recommended schedule is:"
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 5,
+    "text": "- **First contact**: in the first trimester (up to and including 12 weeks of gestation)\n- **Second contact**: 20 weeks\n- **Third contact**: 26 weeks\n- **Fourth contact**: 30 weeks\n- **Fifth contact**: 34 weeks\n- **Sixth contact**: 36 weeks\n- **Seventh contact**: 38 weeks\n- **Eighth contact**: 40 weeks"
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 6,
+    "text": "If pregnancy continues past 41 weeks, women should be brought to a facility for assessment."
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 7,
+    "text": "## Why 8 contacts"
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 8,
+    "text": "Evidence reviewed by WHO found that increased contacts (compared to 4-visit FANC) were associated with reduced perinatal deaths and increased maternal satisfaction. More contacts allow for better detection of complications, more opportunities for health promotion (nutrition, danger signs, birth preparedness) and more relationship-building between the pregnant woman and her care providers."
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 9,
+    "text": "## First contact: priorities"
+  },
+  {
+    "doc_id": "who_anc",
+    "chunk_id": 10,
+    "text": "At the first contact (ideally before 12 weeks):\n- Confirm pregnancy and estimate gestational age\n- Baseline blood pressure, weight, height\n- Blood group, haemoglobin, HIV, syphilis, hepatitis B testing\n- Urine test for protein and infection\n- Start iron and folic acid supplementation\n- Counselling on nutrition, danger signs, and birth preparedness"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 0,
+    "text": "# WHO/UNICEF Infant and Young Child Feeding Guidelines"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 1,
+    "text": "**Sources:**\n- WHO/UNICEF Global Strategy for Infant and Young Child Feeding (2003)\n- WHO recommendations on exclusive breastfeeding (reaffirmed 2023)\n- UNICEF/WHO IYCF guidelines"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 2,
+    "text": "## Exclusive breastfeeding"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 3,
+    "text": "WHO and UNICEF recommend **exclusive breastfeeding for the first 6 months of life**. \"Exclusive\" means the infant receives only breast milk — no other liquids or solids, not even water — except for oral rehydration solution, vitamins, minerals or medicines."
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 4,
+    "text": "After 6 months, infants should receive nutritionally adequate and safe **complementary foods** while continuing **breastfeeding for up to 2 years of age or beyond**."
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 5,
+    "text": "## Why 6 months"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 6,
+    "text": "Evidence from systematic reviews shows that exclusive breastfeeding for 6 months (compared to 3-4 months) confers important health benefits:\n- Reduced risk of gastrointestinal infection\n- Reduced risk of respiratory infection\n- No deficit in growth among healthy term infants\n- Reduced maternal postpartum weight retention"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 7,
+    "text": "## Early initiation"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 8,
+    "text": "Breastfeeding should be **initiated within the first hour of life** (\"early initiation\"). This:\n- Provides the infant with colostrum, rich in antibodies\n- Helps establish breastfeeding\n- Supports uterine contraction and reduces postpartum haemorrhage in the mother\n- Helps maintain newborn body temperature through skin-to-skin contact"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 9,
+    "text": "## Practical guidance"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 10,
+    "text": "- Feed on demand, day and night (at least 8-12 times per 24 hours initially)\n- Avoid pacifiers and bottles, which can confuse the infant's suck\n- Both breasts may be offered at each feed; allow the baby to finish one side\n- Signs of adequate intake: 6+ wet nappies per day, regular weight gain, alert and active baby"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 11,
+    "text": "## Common myths"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 12,
+    "text": "- **Myth:** \"Mother needs water for the baby in hot weather.\" **Fact:** Breast milk is ~88% water and meets all hydration needs in the first 6 months.\n- **Myth:** \"Colostrum is dirty or thin and should be discarded.\" **Fact:** Colostrum is the perfect first food — concentrated antibodies, growth factors, and easily digested."
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 13,
+    "text": "## Continued breastfeeding"
+  },
+  {
+    "doc_id": "who_breastfeeding",
+    "chunk_id": 14,
+    "text": "- 6-12 months: breast milk remains the primary source of nutrition; complementary foods complement it.\n- 12-24 months: breast milk still provides ~1/3 of energy needs and continued immune protection."
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 0,
+    "text": "# Complementary Feeding (6-24 months)"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 1,
+    "text": "**Sources:**\n- WHO Complementary Feeding guidelines\n- UNICEF Infant and Young Child Feeding (IYCF) recommendations\n- MoHFW IYCF guidelines for India"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 2,
+    "text": "## When to start"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 3,
+    "text": "Complementary foods should be introduced when the infant turns **6 months of age** (180 days). This is the recommended starting point for ALL healthy infants. Starting earlier (before 6 months) is generally not recommended — it can displace breast milk and increase risk of infection. Starting later (after 7 months) risks nutrient deficiencies and growth faltering."
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 4,
+    "text": "Breastfeeding should **continue** alongside complementary foods, up to 2 years of age or beyond."
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 5,
+    "text": "## Why 6 months"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 6,
+    "text": "By 6 months:\n- Breast milk alone no longer meets the infant's iron, zinc, and energy needs\n- The infant's digestive system can handle a variety of foods\n- The infant is developmentally ready (can sit with support, has good head control, can move food from front to back of mouth)"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 7,
+    "text": "## Frequency and amount"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 8,
+    "text": "Recommendations grow with age:"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 9,
+    "text": "| Age          | Meals per day                   | Snacks per day | Approx. amount per meal |\n| ------------ | ------------------------------- | -------------- | ----------------------- |\n| 6-8 months   | 2-3                             | 0-1            | start 2-3 tablespoons, build to ½ cup (125 ml) |\n| 9-11 months  | 3-4                             | 1-2            | ½ cup (125 ml)          |\n| 12-23 months | 3-4 family meals                | 1-2            | ¾ cup to 1 cup (175-250 ml) |"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 10,
+    "text": "## What to feed"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 11,
+    "text": "- **Variety is key.** Include foods from all groups daily: cereals/roots, legumes/nuts, dairy, eggs/meat/fish, vitamin-A-rich fruits and vegetables, other fruits and vegetables. - **Iron-rich foods** are especially important: eggs, meat, fish, legumes, dark green leafy vegetables, iron-fortified cereals. - **Texture progression:** start with thick mashed foods at 6 months; progress to chopped finger foods by 9-12 months; family foods (suitably chopped) by 12 months."
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 12,
+    "text": "- **Hygiene matters.** Wash hands before preparing food and before feeding. Use clean utensils. Discard leftover food after 2 hours at room temperature."
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 13,
+    "text": "## What NOT to feed"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 14,
+    "text": "- **Honey** before 12 months (risk of infant botulism)\n- **Whole cow's milk** as a main drink before 12 months (poor iron source, can displace breast milk)\n- **Sugary drinks, packaged juices, junk food** at any age in this window\n- **Whole nuts, hard small items** (choking hazard) before age 4\n- **Tea, coffee** (reduce iron absorption)\n- **Salt and sugar** should not be added to infant foods"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 15,
+    "text": "## Common challenges"
+  },
+  {
+    "doc_id": "who_complementary_feeding",
+    "chunk_id": 16,
+    "text": "- **Picky eating** at 9-15 months is normal. Continue offering rejected foods on different days — children often need 8-15 exposures before accepting a new food.\n- **Refusing to eat during illness:** continue breastfeeding, offer small frequent feeds, give plenty of fluids. Increase intake during recovery.\n- **Slow weight gain:** consult a doctor for assessment. Do not switch to commercial formulas without medical advice."
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 0,
+    "text": "# Pregnancy Danger Signs (WHO + MoHFW)"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 1,
+    "text": "**Sources:**\n- WHO Pregnancy, Childbirth, Postpartum and Newborn Care guide\n- MoHFW Janani Suraksha Yojana (JSY) IEC materials"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 2,
+    "text": "These are signs that warrant **immediate** medical attention. The woman should be taken to a hospital or health facility right away. In India, call **108** (emergency services) or visit the nearest 24-hour Primary Health Centre (PHC) / Community Health Centre (CHC)."
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 3,
+    "text": "## During pregnancy"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 4,
+    "text": "- **Vaginal bleeding** of any amount\n- **Severe headache** that does not improve with rest\n- **Blurred vision** or seeing spots (signs of pre-eclampsia)\n- **Convulsions (fits) or loss of consciousness** (signs of eclampsia)\n- **Severe abdominal pain**\n- **High fever** (above 38°C / 100.4°F)\n- **Severe vomiting** that prevents eating or drinking\n- **Difficulty breathing** or chest pain\n- **Reduced or no foetal movement** after 28 weeks\n- **Sudden swelling** of face, hands or feet (especially with headache or visual changes)\n- **Watery discharge** from the vagina (possible rupture of membranes)\n- **Severe pallor or weakness** that prevents normal activity"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 5,
+    "text": "## During labour"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 6,
+    "text": "- Bleeding more than a heavy period\n- Continuous severe pain between contractions\n- Labour lasting more than 12 hours in a first pregnancy (or 8 hours in subsequent)\n- Cord prolapse (umbilical cord visible at the vagina before the baby)\n- Convulsions"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 7,
+    "text": "## Postpartum (within 6 weeks of delivery)"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 8,
+    "text": "- Heavy bleeding (soaking a pad in less than an hour)\n- Foul-smelling vaginal discharge\n- Fever above 38°C\n- Severe headache or visual changes\n- Severe abdominal pain\n- Breast pain or swelling with fever (mastitis)\n- Pain or swelling in the calves (possible deep vein thrombosis)\n- Feeling extremely sad or having thoughts of harming yourself or the baby (postpartum depression — please reach out to a doctor or call MoHFW helpline 1097)"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 9,
+    "text": "## Newborn danger signs (first 28 days)"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 10,
+    "text": "- Not feeding well or refusing feeds\n- Fever or low body temperature\n- Fast or difficult breathing\n- Convulsions\n- Lethargy or unresponsiveness\n- Yellow skin / eyes (jaundice) extending to palms and soles\n- Persistent vomiting or diarrhoea\n- Umbilical stump red, swollen or with pus"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 11,
+    "text": "**Any** of these signs in a newborn is a reason to seek immediate medical care."
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 12,
+    "text": "## Why this matters"
+  },
+  {
+    "doc_id": "who_danger_signs",
+    "chunk_id": 13,
+    "text": "Most maternal and newborn deaths occur because danger signs are recognised too late or because the family delays seeking care. Knowing these signs — and acting on them immediately — saves lives."
+  }
+]
